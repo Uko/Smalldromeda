@@ -36,8 +36,6 @@
               width: 100%;
               text-align: center;
               background: #fff;
-              font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
-              line-height: 1.5;
               /* RGBa with 0.6 opacity */
               background: rgba(256, 256, 256, 0.5);
               /* For IE 5.5 - 7*/
@@ -52,23 +50,40 @@
               list-style: none;
               padding: 10px;
             }
+            
+            #copyright {
+              bottom: 0px;
+              text-align: center;
+              width: 100%;
+              color: #fff;
+              font-size: smaller;
+            }
+            
+            #copyright a, #copyright a:visited {
+              color: #fff;
+            }
+            
+            #copyright a:hover, #copyright a:active {
+              color: #aaa;
+            }
+
+            
+            p {
+              font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+              line-height: 1.5;
+            }
         </style>
         <!-- End -->
     </head>
 
     <body onload="start();">
-      <div id="fb-root"></div>
-      <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
       <p id="infobar" class="hud">
         Version 1.0.1
         |
         Data by 8.12.13
+      </p>
+      <p id="copyright" class="hud">
+        ©2013 <a href="http://yuriy.tymchuk.me">Yuriy Tymchuk</a>
       </p>
       <ul id="share" class="hud">
         <li>
