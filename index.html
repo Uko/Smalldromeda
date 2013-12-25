@@ -26,12 +26,15 @@
                 padding: 0px;
             }
             
-            #infobar {
+            .hud {
               position: absolute;
-              width: 100%;
               z-index: 100;
-              text-align: center;
               margin: 0;
+            }
+            
+            #infobar {
+              width: 100%;
+              text-align: center;
               background: #fff;
               font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
               line-height: 1.5;
@@ -42,16 +45,41 @@
               /* For IE 8*/
               -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#80FFFFFF, endColorstr=#80FFFFFF)";
             }
+            
+            #share {
+              left: 0px;
+              bottom: 0px;
+              list-style: none;
+              padding: 10px;
+            }
         </style>
         <!-- End -->
     </head>
 
     <body onload="start();">
-      <p id="infobar">
-        Version 1.0.0
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+      <p id="infobar" class="hud">
+        Version 1.0.1
         |
         Data by 8.12.13
       </p>
+      <ul id="share" class="hud">
+        <li>
+          <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://yuriy.tymchuk.me/Smalldromeda/" data-text="@pharoproject developers galaxy aka: &quot;Smalldromeda&quot; by @yuriy_tymchuk">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </li>
+        <li>
+          <div class="g-plusone" data-size="medium" data-href="http://yuriy.tymchuk.me/Smalldromeda/"></div>
+          <script type="text/javascript">window.___gcfg = {lang: 'en-GB'};(function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/platform.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();</script>
+        </li>
+      </ul>
       <div id="seadragon"></div>
     </body>
 
